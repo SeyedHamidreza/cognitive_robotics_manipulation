@@ -51,11 +51,11 @@ Running the script 'demo.py' gives a demonstration of the simulation. The demo c
 - Example:
 
 ```bash
-python3 demo.py --scenario=isolated --runs=1 --show-network-output=False
+python3 simulation.py --scenario=isolated --runs=1 --save-network-output=False
 ```
 
 
-  - Run 'demo.py --help' to see a full list of options.
+  - Run 'simulation.py --help' to see a full list of options.
     
       - In the environment/env.py file, we have provided a parameter namely "SIMULATION_STEP_DELAY" to control the speed of the simulator, this parameter should be tuned based on your hardware. 
        
