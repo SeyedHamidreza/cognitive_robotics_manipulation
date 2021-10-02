@@ -41,7 +41,7 @@ pip install -r requirements.txt
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
 
 ## Demo
-Running the script 'demo.py' gives a demonstration of the simulation. The demo can be run with three different grasping scenarios, including isolated, packed, and pile scenarios:
+Running the script 'simulation.py' gives a demonstration of the simulation. The demo can be run with three different grasping scenarios, including isolated, packed, and pile scenarios:
 
 <p align="center">
   <img src="images/scenarios2.png" width="400" title="">
