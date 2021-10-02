@@ -1,0 +1,15 @@
+numpy>=1.18.5
+opencv-python>=4.5.1.48
+matplotlib>=3.3.3
+scikit-image>=0.17.2
+scikit-learn>=0.23.2
+imageio
+torch
+torchvision
+torchsummary
+tensorboardX
+pyrealsense2
+Pillow
+pandas
+pybullet
+
