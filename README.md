@@ -57,11 +57,11 @@ python3 simulation.py --scenario=isolated --runs=1 --save-network-output=False
 
   - Run 'simulation.py --help' to see a full list of options.
     
-      - In the environment/env.py file, we have provided a parameter namely "SIMULATION_STEP_DELAY" to control the speed of the simulator, this parameter should be tuned based on your hardware. 
+      - In the ***environment/env.py*** file, we have provided a parameter namely ***SIMULATION_STEP_DELAY*** to control the speed of the simulator, this parameter should be tuned based on your hardware. 
        
-      - After performing all the experiments, a summary of the results will be visualized and saved in the "results" folder.
+      - After performing all the experiments, a summary of the results will be visualized and saved in the ***results*** folder.
 
-      - Furthermore, you can check the output of the network by setting the "--show-network-output=True". The output will be saved into the "network_output" folder
+      - Furthermore, you can check the output of the network by setting the "--save-network-output=True". The output will be saved into the ***network_output*** folder
 
 ## References
 
