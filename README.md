@@ -44,7 +44,7 @@ pip3 install -r requirements.txt
 
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
 
-## How to run an experiment
+## How to run experiments
 We can perform a simulation experiment by running the 'simulation.py' script. As shown in the following image, we can perform experiments in three different grasping scenarios, including isolated, packed, and pile scenarios:
 
 <p align="center">
@@ -60,6 +60,7 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
 
   - Run 'simulation.py --help' to see a full list of options.
     
+      - --runs=10 forces the system to run 10 experiments
       - In the ***environment/env.py*** file, we have provided a parameter namely ***SIMULATION_STEP_DELAY*** to control the speed of the simulator, this parameter should be tuned based on your hardware. 
        
       - After performing each experiment, a summary of the results will be visualized and saved in the ***results*** folder.
