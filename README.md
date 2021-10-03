@@ -32,7 +32,7 @@ gripper perceives the environment through an RGB-D camera. The experimental setu
 In this assignment, we capture an RGB-D image of the scene and pass the image to a deep convolutional neural network to obtain pixel-wise grasp configuration in terms of grasp quality, grasp angle, and grasp width. To make it clear, we visualize the output of the GR-ConvNet network for a given image:
 
 <p align="center">
-  <img src="images/network_outputs.png" width="400" title="">
+  <img src="images/network_outputs_2.png" width="400" title="">
 </p>
 <p align="center">
   Outputs of the GR-ConvNet network for a given image
