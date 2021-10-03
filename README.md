@@ -40,8 +40,8 @@ pip install -r requirements.txt
 
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
 
-## Demo
-Running the script 'simulation.py' gives a demonstration of the simulation. The demo can be run with three different grasping scenarios, including isolated, packed, and pile scenarios:
+## How to run an experiment
+We can perform a simulation experiment by running the 'simulation.py' script. As shown in the following image, we can perform experiments in three different grasping scenarios, including isolated, packed, and pile scenarios:
 
 <p align="center">
   <img src="images/scenarios2.png" width="400" title="">
@@ -51,7 +51,7 @@ Running the script 'simulation.py' gives a demonstration of the simulation. The 
 - Example:
 
 ```bash
-python3 simulation.py --scenario=isolated --runs=1 --save-network-output=False
+python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-network-output=True
 ```
 
 
