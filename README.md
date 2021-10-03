@@ -35,7 +35,7 @@ In this assignment, we are pursuing three main goals: (i) learning about at leas
 
 Ensure you are running Python>=3.6.5 and import the required libraries by running:
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
