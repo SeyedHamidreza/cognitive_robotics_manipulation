@@ -19,16 +19,27 @@ Service robots typically use a perception system to perceive the world. The perc
 The main goal of this assignment is to make a coupling between perception and manipulation using eye-to-hand camera coordination. Towards this goal, we have developed a simulation environment in [PyBullet](https://pybullet.org/wordpress/), where a Universal Robot (UR5e) with a two-fingered Robotiq 2F-140
 gripper perceives the environment through an RGB-D camera. The experimental setup for this assignment is shown in the following figure. This setup is very useful to extensively evaluate different object grasping approaches.
 
-
-***In this assignment, we are pursuing three main goals:*** (i) learning about at least two deep visual grasping approaches, (ii) evaluating and comparing their performances in three scenarios: isolated, packed, and pile (see a video of each scenario above); (iii) investigating the usefulness of formulating object grasping as an object-agnostic problem for general purpose tasks. ***You can also use this setup to develop your final course project***.
-
-
 <p align="center">
   <img src="images/pybullet_setup.png" width="400" title="">
 </p>
 <p align="left">
   Our experimental setup consists of a table, a basket, a URe5 robotic arm, and objects from YCB dataset. The green rectangle shows the robot's workspace, and the camera indicates the pose of the camera in the environment. Synthesis RGB and depth images, together with a segmentation mask are shown on the left side of the figure.
 </p>
+
+
+***We are pursuing three main goals:*** (i) learning about at least two deep visual grasping approaches, (ii) evaluating and comparing their performances in three scenarios: isolated, packed, and pile (see a video of each scenario above); (iii) investigating the usefulness of formulating object grasping as an object-agnostic problem for general purpose tasks. ***You can also use this setup to develop your final course project***.
+
+In this assignment, we capture an RGB-D image of the scene and pass the image to a deep convolutional neural network to obtain pixel-wise grasp configuration in terms of grasp quality, grasp angle, and grasp width. To make it clear, we visualize the output of the GR-ConvNet network for a given image:
+
+<p align="center">
+  <img src="images/pybullet_setup.png" width="400" title="">
+</p>
+<p align="center">
+  Outputs of the GR-ConvNet network for a given image
+</p>
+
+The best grasp configuration is then selected and then, we convert the grasp pose from pixel space to the robot's workspace (x, y, z, roll, pitch, yaw). We finally instruct the robot to perform a clear table task by grasping and manipulating the target object from the table to the basket. A particular grasp is recorded as a success if the object is inside the basket at the end of the experiment.  An experiment is continued until either all objects get removed from the workspace, or four failures occurred consecutively. Note that, the system automatically reports a summary of the obtained results in the “results” folder, and the prediction of network is visualized and saved in the “network_output” folder.
+
 
 
 ## Requirements
