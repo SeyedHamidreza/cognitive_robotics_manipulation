@@ -38,6 +38,7 @@ Ensure you are running Python>=3.6.5 and import the required libraries by runnin
 cd ~
 git clone https://github.com/SeyedHamidreza/cognitive_robotics_manipulation.git
 cd ~/cognitive_robotics_manipulation
+python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
