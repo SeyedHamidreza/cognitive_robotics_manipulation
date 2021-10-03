@@ -4,6 +4,15 @@
 ##
 
 
+<p align="center">
+  <img src="images/isolated.gif" width="250" title="">
+  <img src="images/packed.gif" width="250" title="">
+  <img src="images/pile.gif" width="250" title="">
+</p>
+<p align="left">
+   Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario. The green line denotes the camera’s line of sight.
+</p>
+
 # Assignment Overview
 Service robots typically use a perception system to perceive the world. The perception system provides valuable information that the robot has to consider for interacting with users and environments. A robot needs to know how to grasp and manipulate objects in different situations to assist humans in various daily tasks. For instance, consider a robotic task such as clear table. Such tasks consist of two phases: the first one is the perception of the object, and the second phase is dedicated to the planning and execution of the manipulation task. In this assignment, you mainly focus on the topic of deep visual object grasping and manipulation.
 
@@ -21,15 +30,6 @@ In this assignment, we are pursuing three main goals: (i) learning about at leas
   Our experimental setup consists of a table, a basket, a URe5 robotic arm, and objects from YCB dataset. The green rectangle shows the robot's workspace, and the camera indicates the pose of the camera in the environment. Synthesis RGB and depth images, together with a segmentation mask are shown on the left side of the figure.
 </p>
 
-
-<p align="center">
-  <img src="images/isolated.gif" width="250" title="">
-  <img src="images/packed.gif" width="250" title="">
-  <img src="images/pile.gif" width="250" title="">
-</p>
-<p align="left">
-   Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario. The green line denotes the camera’s line of sight.
-</p>
 
 ## Requirements
 
