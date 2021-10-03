@@ -1,6 +1,6 @@
 ## Coupling between Perception and Manipulation: Learning to Grasp Objects in Highly Cluttered Environments
 
-###### [Hamidreza Kasaei](https://hkasaei.github.io/) | [IRL-Lab](https://www.ai.rug.nl/irl-lab)
+###### [Hamidreza Kasaei](https://hkasaei.github.io/) | [cognitive robotics course](https://rugcognitiverobotics.github.io/) | [assignment description](https://github.com/SeyedHamidreza/cognitive_robotics_manipulation/blob/main/assignment_description.pdf)| [IRL-Lab](https://www.ai.rug.nl/irl-lab)
 ##
 
 
