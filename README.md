@@ -48,8 +48,6 @@ We can perform a simulation experiment by running the 'simulation.py' script. As
 </p>
 
 
-- Example:
-
 ```bash
 python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-network-output=True
 ```
