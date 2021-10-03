@@ -61,18 +61,25 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
        
       - After performing all the experiments, a summary of the results will be visualized and saved in the ***results*** folder.
 
-      - Furthermore, you can check the output of the network by setting the "--save-network-output=True". The output will be saved into the ***network_output*** folder
+      - Furthermore, you can check the output of the network by setting the ***--save-network-output=True***. The output will be saved into the ***network_output*** folder
 
 ## References
 
 - Simulation
-  - The simulation code is an adaptation from the following repository: https://github.com/ElectronicElephant/pybullet_ur5_robotiq  
+  - The simulation code is an adaptation from the following repositories: 
+      - https://github.com/ElectronicElephant/pybullet_ur5_robotiq  
+      - https://github.com/JeroenOudeVrielink/ur5-robotic-grasping
   - Object models were taken from the following repository: https://github.com/eleramp/pybullet-object-models
+  
 
 
-- Network
-  - GGCNN :  https://github.com/dougsm/ggcnn
-  - GR-CONV: https://github.com/skumra/robotic-grasping  
+- Networks that you can use
+  - GR-CONV [default]: https://github.com/skumra/robotic-grasping 
+  - GGCNN:  https://github.com/dougsm/ggcnn
+  - VGN: https://github.com/ethz-asl/vgn
+  - C_GR_ConvNet: https://github.com/krishkribo/3D_GDM-RSON
+  - GDP: https://github.com/ethz-asl/vgn
+   
 
 - Papers:
    - Hamidreza Kasaei and Mohammadreza Kasaei. MV-grasp: Real-time multi-view 3D object grasping in highly cluttered environments. arXiv preprint arXiv:2103.10997, 2021
