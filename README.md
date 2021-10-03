@@ -9,8 +9,8 @@
   <img src="images/packed.gif" width="250" title="">
   <img src="images/pile.gif" width="250" title="">
 </p>
-<p align="left">
-   Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario. The green line denotes the camera’s line of sight.
+<p align="center">
+   Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario.
 </p>
 
 # Assignment Overview
