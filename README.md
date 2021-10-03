@@ -20,7 +20,7 @@ The main goal of this assignment is to make a coupling between perception and ma
 gripper perceives the environment through an RGB-D camera. The experimental setup for this assignment is shown in the following figure. This setup is very useful to extensively evaluate different object grasping approaches.
 
 
-***In this assignment, we are pursuing three main goals:*** (i) learning about at least two deep visual grasping approaches, (ii) evaluating and comparing their performances in three scenarios: isolated, packed, and pile (see scenarios below); (iii) investigating the usefulness of formulating object grasping as an object-agnostic problem for general purpose tasks. You can also use this setup to develop your final course project.
+***In this assignment, we are pursuing three main goals:*** (i) learning about at least two deep visual grasping approaches, (ii) evaluating and comparing their performances in three scenarios: isolated, packed, and pile (see a video of each scenario above); (iii) investigating the usefulness of formulating object grasping as an object-agnostic problem for general purpose tasks. ***You can also use this setup to develop your final course project***.
 
 
 <p align="center">
