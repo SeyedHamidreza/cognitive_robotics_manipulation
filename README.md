@@ -34,6 +34,7 @@ gripper perceives the environment through an RGB-D camera. The experimental setu
 ## Requirements
 
 Ensure you are running Python>=3.6.5 and import the required libraries by running:
+
 ```bash
 cd ~
 git clone https://github.com/SeyedHamidreza/cognitive_robotics_manipulation.git
@@ -41,8 +42,18 @@ cd ~/cognitive_robotics_manipulation
 python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
-
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
+
+```bash
+cd ~
+gedit .bashrc
+```
+and then add the following lines at the end of your .bashrc file
+
+```sh
+#This line is necessary for MoveIt! and Pybullet, otherwise the robot seems broken
+export LC_NUMERIC="en_US.UTF-8"
+```
 
 ## How to run experiments
 We can perform a simulation experiment by running the 'simulation.py' script. As shown in the following image, we can perform experiments in three different grasping scenarios, including isolated, packed, and pile scenarios:
