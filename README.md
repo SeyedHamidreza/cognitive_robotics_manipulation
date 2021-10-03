@@ -34,11 +34,10 @@ gripper perceives the environment through an RGB-D camera. The experimental setu
 ## Requirements
 
 Ensure you are running Python>=3.6.5 and import the required libraries by running:
-```
+```bash
 pip3 install -r requirements.txt
 cd ~
 git clone https://github.com/SeyedHamidreza/cognitive_robotics_manipulation.git
-
 ```
 
 It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
