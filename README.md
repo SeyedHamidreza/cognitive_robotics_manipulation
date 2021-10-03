@@ -76,8 +76,8 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
 - Networks that you can use
   - GR-CONV [default]: https://github.com/skumra/robotic-grasping 
   - GGCNN:  https://github.com/dougsm/ggcnn
-  - VGN: https://github.com/ethz-asl/vgn
   - C_GR_ConvNet: https://github.com/krishkribo/3D_GDM-RSON
+  - VGN: https://github.com/ethz-asl/vgn
   - GDP: https://github.com/ethz-asl/vgn
    
 
