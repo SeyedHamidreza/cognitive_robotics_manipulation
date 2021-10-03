@@ -13,3 +13,4 @@ pyrealsense2
 Pillow
 pandas
 pybullet
+attrdict
