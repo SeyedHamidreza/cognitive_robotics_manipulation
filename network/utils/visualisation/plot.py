@@ -60,7 +60,7 @@ def plot_results(
 
     ax = fig.add_subplot(2, 3, 4)
     plot = ax.imshow(grasp_q_img, cmap='jet', vmin=0, vmax=1)
-    ax.set_title('Q')
+    ax.set_title('Quality')
     ax.axis('off')
     plt.colorbar(plot)
 
