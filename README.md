@@ -89,6 +89,10 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
 
       - Furthermore, you can check the output of the network by setting the ***--save-network-output=True***. The output will be saved into the ***network_output*** folder
 
+## Integrating a new model 
+
+You need to add your trained model into the "trained_models" folder. You can check the code (simulation.py) to see how we integrate and use the GR-ConvNet model. 
+
 ## References
 
 - Simulation
