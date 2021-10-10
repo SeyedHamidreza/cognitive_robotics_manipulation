@@ -91,7 +91,7 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
 
 ## Integrating a new model 
 
-You need to add your trained model into the "trained_models" folder. You can check the code (simulation.py) to see how we integrate and use the GR-ConvNet model. 
+You need to add your trained model into the "trained_models" folder. You can check the code (simulation.py and grasp_generator.py) to see how we integrate and use the GR-ConvNet model. 
 
 ## References
 
