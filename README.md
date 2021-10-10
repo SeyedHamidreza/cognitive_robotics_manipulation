@@ -118,6 +118,13 @@ You need to add your trained model into the "trained_models" folder. You can che
   
   - Sulabh Kumra, Shirin Joshi, and Ferat Sahin.  Antipodal robotic grasping using generative residual convolutional neural network. In 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems(IROS), pages 9626–9633, 2020. doi: 10.1109/IROS45743.2020.9340777.
 
+## CONTACT INFORMATION 
+
+1. Please use the following email addresses if you have questions or want to contribute to this project:
+	- :email: <hamidreza.kasaei@rug.nl> 
+	
+2. Follow us on our [website](www.ai.rug.nl/irl-lab) for updates and to get information about other works:
+	- :satellite: www.ai.rug.nl/irl-lab
 
 ## TODO
 
