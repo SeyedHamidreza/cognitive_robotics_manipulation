@@ -122,9 +122,7 @@ You need to add your trained model into the "trained_models" folder. You can che
 
 1. Please use the following email addresses if you have questions or want to contribute to this project:
 	- :email: <hamidreza.kasaei@rug.nl> 
-	
-2. Follow us on our [website](www.ai.rug.nl/irl-lab) for updates and to get information about other works:
-	- :satellite: www.ai.rug.nl/irl-lab
+2. check out IRL-Lab [website](www.ai.rug.nl/irl-lab) for more information about other projects.
 
 ## TODO
 
