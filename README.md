@@ -23,7 +23,7 @@ gripper perceives the environment through an RGB-D camera. The experimental setu
   <img src="images/pybullet_setup.png" width="400" title="">
 </p>
 <p align="left">
-  Our experimental setup consists of a table, a basket, a URe5 robotic arm, and objects from YCB dataset. The green rectangle shows the robot's workspace, and the camera indicates the pose of the camera in the environment. Synthesis RGB and depth images, together with a segmentation mask are shown on the left side of the figure.
+  Our experimental setup consists of a table, a basket, a UR5e robotic arm, and objects from YCB dataset. The green rectangle shows the robot's workspace, and the camera indicates the pose of the camera in the environment. Synthesis RGB and depth images, together with a segmentation mask are shown on the left side of the figure.
 </p>
 
 
