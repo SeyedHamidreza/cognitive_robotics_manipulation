@@ -130,7 +130,6 @@ class GrasppingScenarios():
                         failed_grasp_counter += 1
                       
                         continue
-                        continue
 
 
                     if vis:
@@ -144,7 +143,7 @@ class GrasppingScenarios():
 
                     #print ("grasps.length = ", len(grasps))
                     if (idx > len(grasps)-1):                            
-                        continue  
+                        break  
 
                     lineIDs = self.draw_predicted_grasp(grasps[idx])
 
