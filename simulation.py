@@ -131,8 +131,12 @@ class GrasppingScenarios():
                         continue
 
                     #print ("grasps.length = ", len(grasps))
-                    if (idx > len(grasps)-1):                            
-                        idx = 0  
+                    if (idx > len(grasps)-1):  
+                        print ("idx = ", idx)
+                        if len(grasps)-1 == 0 :
+                            idx=0
+                        else:
+                            continue   
 
                     if vis:
                         LID =[]
@@ -243,7 +247,8 @@ class GrasppingScenarios():
             number_of_failures = 0
             ATTEMPTS = 4
             number_of_attempts = ATTEMPTS
-            
+            failed_grasp_counter = 0
+
             while self.is_there_any_object(camera) and number_of_failures < number_of_attempts:                
                 #env.move_arm_away()
                 try: 
@@ -256,7 +261,12 @@ class GrasppingScenarios():
                         grasps, save_name = generator.predict_grasp( rgb, depth, n_grasps=number_of_attempts, show_output=output)
                         if (grasps == []):
                                 self.dummy_simulation_steps(30)
-                                print ("could not find a grasp point!")                            
+                                print ("could not find a grasp point!")    
+                                if failed_grasp_counter > 3:
+                                    print("Failed to find a grasp points > 3 times. Skipping.")
+                                    break
+
+                                failed_grasp_counter += 1 
                                 continue
                         
                         if vis:
