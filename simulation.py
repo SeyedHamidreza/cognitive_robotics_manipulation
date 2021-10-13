@@ -70,7 +70,7 @@ class GrasppingScenarios():
         rgb, depth, _ = camera.get_cam_img()
         #print ("min RGB = ", rgb.min(), "max RGB = ", rgb.max(), "rgb.avg() = ", np.average(rgb))
         #print ("min depth = ", depth.min(), "max depth = ", depth.max())
-        if (np.average(rgb) > 248) :
+        if (np.average(rgb) > 250) :
             return False
         else:
             return True
