@@ -111,7 +111,7 @@ class GrasppingScenarios():
                 number_of_attempts = self.ATTEMPTS
                 number_of_failures = 0
                 idx = 0 ## select the best grasp configuration
-                
+                failed_grasp_counter = 0
                 while self.is_there_any_object(camera) and number_of_failures < number_of_attempts:     
                     
                     bgr, depth, _ = camera.get_cam_img()
@@ -122,7 +122,14 @@ class GrasppingScenarios():
                     grasps, save_name = generator.predict_grasp( rgb, depth, n_grasps=number_of_attempts, show_output=output)
                     if (grasps == []):
                         self.dummy_simulation_steps(10)
-                        print ("could not find a grasp point!")                        
+                        print ("could not find a grasp point!")
+                        if failed_grasp_counter > 3:
+                            print("Failed to find a grasp points > 3 times. Skipping.")
+                            break
+                        
+                        failed_grasp_counter += 1
+                      
+                        continue
                         continue
 
 
