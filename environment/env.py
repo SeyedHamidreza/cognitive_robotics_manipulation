@@ -183,7 +183,7 @@ class Environment:
         # print(np.abs(lin_vel).sum() + np.abs(ang_vel).sum())
         return np.abs(lin_vel).sum() + np.abs(ang_vel).sum() < still_eps
 
-    def wait_until_still(self, objID, max_wait_epochs=10):
+    def wait_until_still(self, objID, max_wait_epochs=100):
         for _ in range(max_wait_epochs):
             self.step_simulation()
             if self.is_still(objID):
