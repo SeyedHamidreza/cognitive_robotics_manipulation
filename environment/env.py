@@ -99,10 +99,10 @@ class Environment:
         if vis:
             self.eef_debug_lineID = None
             # p.addUserDebugLine([camera.x, camera.y, camera.z - 0.15], [camera.x, camera.y, camera.z - 0.4], [0, 1, 0], lineWidth=5)
-            dist = 1.0
+            dist = 1.5
             yaw = 30
             pitch = -50
-            target = [0.2, -0.40, 0.785]
+            target = [0.1, -0.30, 0.95]
             p.resetDebugVisualizerCamera(dist, yaw, pitch, target)
 
             # camera model
