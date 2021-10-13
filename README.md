@@ -66,6 +66,8 @@ and then add the following lines at the end of your .bashrc file
 export LC_NUMERIC="en_US.UTF-8"
 ```
 
+close all your terminal and open one. 
+
 ## How to run experiments
 We can perform a simulation experiment by running the 'simulation.py' script. As shown in the following image, we can perform experiments in three different grasping scenarios, including isolated, packed, and pile scenarios:
 
