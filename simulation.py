@@ -250,6 +250,8 @@ class GrasppingScenarios():
             number_of_attempts = ATTEMPTS
             failed_grasp_counter = 0
             threshold = 238
+            flag_failed_grasp_counter= False
+
             while self.is_there_any_object(camera, threshold) and number_of_failures < number_of_attempts:                
                 #env.move_arm_away()
                 try: 
@@ -263,8 +265,9 @@ class GrasppingScenarios():
                         if (grasps == []):
                                 self.dummy_simulation_steps(30)
                                 print ("could not find a grasp point!")    
-                                if failed_grasp_counter > 3:
+                                if failed_grasp_counter > 5:
                                     print("Failed to find a grasp points > 3 times. Skipping.")
+                                    flag_failed_grasp_counter= True
                                     break
 
                                 failed_grasp_counter += 1 
@@ -340,6 +343,9 @@ class GrasppingScenarios():
                     env.reset_robot()
                     #print ("#objects = ", len(env.obj_ids), "#failed = ", number_of_failures , "#attempts =", number_of_attempts)
         
+                if flag_failed_grasp_counter:
+                    flag_failed_grasp_counter= False
+                    break
         data.summarize() 
         
 def parse_args():
