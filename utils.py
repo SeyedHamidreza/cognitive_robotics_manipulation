@@ -55,7 +55,7 @@ class PackPileData:
 
         if not os.path.exists(save_path):
             os.mkdir(save_path)
-        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        now = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
         self.save_dir = f'{save_path}/{now}_{scenario}'
         os.mkdir(self.save_dir)
 
@@ -192,7 +192,7 @@ class IsolatedObjData:
 
         if not os.path.exists(save_path):
             os.mkdir(save_path)
-        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        now = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
         self.save_dir = f'{save_path}/{now}_iso_obj'
         os.mkdir(self.save_dir)
 
