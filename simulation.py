@@ -122,8 +122,8 @@ class GrasppingScenarios():
                               
                     grasps, save_name = generator.predict_grasp( rgb, depth, n_grasps=number_of_attempts, show_output=output)
                     if (grasps == []):
-                        self.dummy_simulation_steps(10)
-                        print ("could not find a grasp point!")
+                        self.dummy_simulation_steps(50)
+                        #print ("could not find a grasp point!")
                         if failed_grasp_counter > 3:
                             print("Failed to find a grasp points > 3 times. Skipping.")
                             break
