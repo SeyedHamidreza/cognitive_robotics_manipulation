@@ -173,7 +173,7 @@ class GraspGenerator:
 
             if not os.path.exists('network_output'):
                 os.mkdir('network_output')
-            time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            time = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
             save_name = 'network_output/{}'.format(time)
             plot.savefig(save_name + '.png')
             plot.clf()
