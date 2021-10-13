@@ -65,12 +65,12 @@ class GrasppingScenarios():
         for _ in range(n):
             p.stepSimulation()
 
-    def is_there_any_object(self,camera, threshold = 250):
+    def is_there_any_object(self,camera):
         self.dummy_simulation_steps(10)
         rgb, depth, _ = camera.get_cam_img()
         #print ("min RGB = ", rgb.min(), "max RGB = ", rgb.max(), "rgb.avg() = ", np.average(rgb))
         #print ("min depth = ", depth.min(), "max depth = ", depth.max())
-        if (np.average(rgb) > threshold) :
+        if (depth.max()- depth.min() < 0.0025):
             return False
         else:
             return True
@@ -249,10 +249,9 @@ class GrasppingScenarios():
             ATTEMPTS = 4
             number_of_attempts = ATTEMPTS
             failed_grasp_counter = 0
-            threshold = 238
             flag_failed_grasp_counter= False
 
-            while self.is_there_any_object(camera, threshold) and number_of_failures < number_of_attempts:                
+            while self.is_there_any_object(camera) and number_of_failures < number_of_attempts:                
                 #env.move_arm_away()
                 try: 
                     idx = 0 ## select the best grasp configuration
