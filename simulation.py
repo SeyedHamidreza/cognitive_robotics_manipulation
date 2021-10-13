@@ -118,7 +118,7 @@ class GrasppingScenarios():
 
                     ##convert BGR to RGB
                     rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-                                      
+                              
                     grasps, save_name = generator.predict_grasp( rgb, depth, n_grasps=number_of_attempts, show_output=output)
                     if (grasps == []):
                         self.dummy_simulation_steps(10)
@@ -126,11 +126,13 @@ class GrasppingScenarios():
                         if failed_grasp_counter > 3:
                             print("Failed to find a grasp points > 3 times. Skipping.")
                             break
-                        
-                        failed_grasp_counter += 1
-                      
+                            
+                        failed_grasp_counter += 1                 
                         continue
 
+                    #print ("grasps.length = ", len(grasps))
+                    if (idx > len(grasps)-1):                            
+                        idx = 0  
 
                     if vis:
                         LID =[]
@@ -140,10 +142,6 @@ class GrasppingScenarios():
                         self.remove_drawing(LID)
                         self.dummy_simulation_steps(10)
                         
-
-                    #print ("grasps.length = ", len(grasps))
-                    if (idx > len(grasps)-1):                            
-                        break  
 
                     lineIDs = self.draw_predicted_grasp(grasps[idx])
 
