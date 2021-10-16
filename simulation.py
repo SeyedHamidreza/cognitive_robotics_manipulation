@@ -134,10 +134,11 @@ class GrasppingScenarios():
                     #print ("grasps.length = ", len(grasps))
                     if (idx > len(grasps)-1):  
                         print ("idx = ", idx)
-                        if len(grasps)-1 == 0 :
-                            idx=0
+                        if len(grasps) > 0 :
+                           idx = len(grasps)-1
                         else:
-                            continue   
+                           number_of_failures += 1
+                           continue    
 
                     if vis:
                         LID =[]
@@ -283,9 +284,10 @@ class GrasppingScenarios():
                         #print ("grasps.length = ", len(grasps))
                         if (idx > len(grasps)-1):  
                             print ("idx = ", idx)
-                            if len(grasps)-1 == 0 :
-                                idx=0
+                            if len(grasps) > 0 :
+                                idx = len(grasps)-1
                             else:
+                                number_of_failures += 1
                                 continue  
 
                         lineIDs = self.draw_predicted_grasp(grasps[idx])
