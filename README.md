@@ -129,3 +129,4 @@ You need to add your trained model into the "trained_models" folder. You can che
 ## TODO
 
 - Add a param to save/not save the results
+- Objects get disappear after several runs, check the potential reasons. 
