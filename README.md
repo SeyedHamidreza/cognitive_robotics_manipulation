@@ -130,3 +130,4 @@ You need to add your trained model into the "trained_models" folder. You can che
 
 - Add a param to save/not save the results
 - Objects get disappear after several runs, check the potential reasons. 
+- IK should be improved -- especially for the lower-right position, it does not work properly
