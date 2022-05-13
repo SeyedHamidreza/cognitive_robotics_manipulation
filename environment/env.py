@@ -238,6 +238,8 @@ class Environment:
             p.setJointMotorControl2(self.robot_id, joint.id, p.POSITION_CONTROL,
                                     targetPosition=0., force=joint.maxForce,
                                     maxVelocity=joint.maxVelocity)
+
+                                    
             self.step_simulation()
 
     def check_grasped(self):
@@ -549,11 +551,21 @@ class Environment:
               0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
         jd = jd * 0
         still_open_flag_ = True  # Hot fix
+
+        real_xyz, real_xyzw = p.getLinkState(self.robot_id, self.eef_id)[0:2]
+        alpha = 0.2 # this parameter can be tuned to make the movement  smoother
+        
         for _ in range(max_step):
+
             # apply IK
-            joint_poses = p.calculateInverseKinematics(self.robot_id, self.eef_id, [x, y, z], orn,
-                                                       maxNumIterations=100, jointDamping=jd
-                                                       )
+            x_tmp = alpha * x + (1-alpha)*real_xyz[0]
+            y_tmp = alpha * y + (1-alpha)*real_xyz[1]
+            z_tmp = alpha * z + (1-alpha)*real_xyz[2]
+            
+            joint_poses = p.calculateInverseKinematics(bodyUniqueId=self.robot_id, endEffectorLinkIndex=self.eef_id, 
+                                                       targetPosition=[x_tmp, y_tmp, z_tmp], targetOrientation=orn, 
+                                                       maxNumIterations=200)
+
             # Filter out the gripper
             for i, name in enumerate(self.controlJoints[:-1]):
                 joint = self.joints[name]
@@ -566,11 +578,13 @@ class Environment:
             self.step_simulation()
             if try_close_gripper and still_open_flag_ and not self.gripper_contact():
                 still_open_flag_ = self.close_gripper(check_contact=True)
+
             # Check if contact with objects
             if check_collision_config and self.gripper_contact(**check_collision_config):
                 if self.debug:
                     print('Collision detected!', self.check_grasped_id())
                 return False, p.getLinkState(self.robot_id, self.eef_id)[0:2]
+
             # Check xyz and rpy error
             real_xyz, real_xyzw = p.getLinkState(
                 self.robot_id, self.eef_id)[0:2]
