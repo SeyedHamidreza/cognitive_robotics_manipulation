@@ -5,9 +5,9 @@
 
 
 <p align="center">
-  <img src="images/isolated.gif" width="250" title="">
-  <img src="images/packed.gif" width="250" title="">
-  <img src="images/pile.gif" width="250" title="">
+  <img src="images/isolated.gif" width="250" hight="250" title="">
+  <img src="images/packed.gif" width="250" hight="250" title="">
+  <img src="images/pile.gif" width="250" hight="250" title="">
 </p>
 <p align="center">
    Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario.
