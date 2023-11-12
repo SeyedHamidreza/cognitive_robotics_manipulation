@@ -3,6 +3,9 @@
 ###### [Hamidreza Kasaei](https://hkasaei.github.io/) | [cognitive robotics course](https://rugcognitiverobotics.github.io/) | [assignment description](https://github.com/SeyedHamidreza/cognitive_robotics_manipulation/blob/main/assignment_description.pdf) | [IRL-Lab](https://www.ai.rug.nl/irl-lab)
 ##
 
+|       |       |       |
+|:-----:|:-----:|:-----:|
+| ![Alt text](images/isolated.gif | width=250) | ![Alt text](images/packed.gif | width=250) | ![Alt text](images/pile.gif | width=250) |
 
 <p align="center">
   <img src="images/isolated.gif" width="250" hight="250" title="">
