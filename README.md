@@ -3,10 +3,6 @@
 ###### [Hamidreza Kasaei](https://hkasaei.github.io/) | [cognitive robotics course](https://rugcognitiverobotics.github.io/) | [assignment description](https://github.com/SeyedHamidreza/cognitive_robotics_manipulation/blob/main/assignment_description.pdf) | [IRL-Lab](https://www.ai.rug.nl/irl-lab)
 ##
 
-|       |       |       |
-|:-----:|:-----:|:-----:|
-| ![Alt text](images/isolated.gif | width=250) | ![Alt text](images/packed.gif | width=250) | ![Alt text](images/pile.gif | width=250) |
-
 <p align="center">
   <img src="images/isolated.gif" width="250" hight="250" title="">
   <img src="images/packed.gif" width="250" hight="250" title="">
@@ -132,5 +128,4 @@ You need to add your trained model into the "trained_models" folder. You can che
 ## TODO
 
 - Add a param to save/not save the results
-- Objects get disappear after several runs, check the potential reasons. 
-- IK should be improved -- especially for the lower-right position, it does not work properly
+- Objects disappear after several runs, check the potential reasons. 
