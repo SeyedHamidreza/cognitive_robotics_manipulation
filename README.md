@@ -65,7 +65,37 @@ and then add the following lines at the end of your .bashrc file
 export LC_NUMERIC="en_US.UTF-8"
 ```
 
-close all your terminal and open one. 
+close all your terminal and open one.
+
+### MacOS ARM instructions (M1/M2/M3)
+For MacOS, please make sure to use Python 3.8. An example using Conda:
+
+```bash
+cd ~
+git clone https://github.com/SeyedHamidreza/cognitive_robotics_manipulation.git
+cd ~/cognitive_robotics_manipulation
+conda init
+conda create -n venv38 python=3.8 pip
+conda activate venv38
+python --version
+python -m pip install --upgrade pip
+pip install -r requirements-macos.txt
+pip install pybullet
+```
+It is very important that `pybullet` is build after Numpy is installed. Please check with
+```bash
+python -c "import pybullet; print('NumPy enabled:', pybullet.isNumpyEnabled())"
+```
+whether Numpy is enabled. If not, try:
+```bash
+pip uninstall pybullet
+pip cache remove pybullet
+pip install -I pybullet
+```
+
+***Note: if anything fails with the MacOS build, please create a new issue.***
+#### Known issues
+- `TypeError: tuple indices must be integers or slices, not tuple`: check whether Numpy is enabled using the command as seen above.
 
 ## How to run experiments
 We can perform a simulation experiment by running the 'simulation.py' script. As shown in the following image, we can perform experiments in three different grasping scenarios, including isolated, packed, and pile scenarios:
