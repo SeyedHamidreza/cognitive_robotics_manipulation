@@ -1,4 +1,4 @@
-numpy>=1.18.5
+numpy>=1.18.5,<1.24
 scikit-build
 matplotlib==3.3.3
 scikit-image==0.17.2
