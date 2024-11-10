@@ -43,6 +43,8 @@ The best grasp configuration is then selected and then, we convert the grasp pos
 
 ## Requirements
 
+### Ubuntu instructions
+
 Ensure you are running Python>=3.6.5 and import the required libraries by running:
 
 ```bash
