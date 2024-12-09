@@ -124,7 +124,31 @@ python3 simulation.py --scenario=pile --network=GR_ConvNet --runs=10 --save-netw
 
 ## Integrating a new model 
 
-You need to add your trained model into the "trained_models" folder. You can check the code (simulation.py and grasp_generator.py) to see how we integrate and use the GR-ConvNet model. 
+You need to add your trained model to the "trained_models" folder. You can check the code (simulation.py and grasp_generator.py) to see how we integrate and use the GR-ConvNet model. 
+
+
+## Use Google Scanned Objects dataset
+
+You can download various object models from the following link and insert them into our framework as follows:
+
+Google Scanned Objects dataset: https://app.gazebosim.org/GoogleResearch/fuel/collections/Scanned%20Objects%20by%20Google%20Research
+
+```
+texture_id = p.loadTexture('/home/hamidreza/Downloads/Animal_Planet_Foam_2Headed_Dragon/materials/textures/texture.png')
+obj_id = p.loadSDF("/home/hamidreza/Downloads/Animal_Planet_Foam_2Headed_Dragon/model.sdf", globalScaling=1)
+p.changeVisualShape(
+            obj_id[0], 
+            -1,  # Link index (-1 for base link)
+            textureUniqueId=texture_id
+        )
+p.resetBasePositionAndOrientation(obj_id[0],[2,1,0.5],[0,0,0,1])
+```
+
+Here is a screenshot of the result:
+
+<p align="center">
+  <img src="images/sample_gso.png" width="400" title="">
+</p>
 
 ## References
 
