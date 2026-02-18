@@ -12,6 +12,10 @@
    Three scenarios: (left) isolated scenario, (center) packed scenario, and (right) pile scenario.
 </p>
 
+## Branches
+- `ubuntu-24.04` (default): Active development (Python 3.12)
+- `ubuntu-20.04`: Legacy support (Python 3.8)
+
 # Assignment Overview
 Service robots typically use a perception system to perceive the world. The perception system provides valuable information that the robot has to consider for interacting with users and environments. A robot needs to know how to grasp and manipulate objects in different situations to assist humans in various daily tasks. For instance, consider a robotic task such as clear table. Such tasks consist of two phases: the first one is the perception of the object, and the second phase is dedicated to the planning and execution of the manipulation task. In this assignment, you mainly focus on the topic of deep visual object grasping and manipulation.
 
