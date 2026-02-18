@@ -21,7 +21,7 @@ def gridshow(name, imgs, scales, cmaps, width, border=10):
         # Scale images into range 0-1
         if scale is not None:
             img = (np.clip(img, scale[0], scale[1]) - scale[0]) / (scale[1] - scale[0])
-        elif img.dtype == np.float:
+        elif np.issubdtype(img.dtype, np.floating):
             img = (img - img.min()) / (img.max() - img.min() + 1e-6)
 
         # Apply colormap (if applicable) and convert to uint8

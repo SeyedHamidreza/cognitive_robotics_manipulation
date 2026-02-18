@@ -45,16 +45,26 @@ The best grasp configuration is then selected and then, we convert the grasp pos
 
 ### Ubuntu instructions
 
+Tested on Ubuntu 24.04.
+
 Ensure you are running Python>=3.6.5 and import the required libraries by running:
 
 ```bash
 cd ~
 git clone https://github.com/SeyedHamidreza/cognitive_robotics_manipulation.git
 cd ~/cognitive_robotics_manipulation
+python3 -m venv .venv
+source .venv/bin/activate
 python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
-It will install a set of packages, including: numpy, opencv-python, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
+It will install a set of packages, including: numpy, opencv-python-headless, matplotlib, scikit-image, imageio, torch, torchvision, torchsummary, tensorboardX, pyrealsense2, Pillow, pandas, matplotlib, pybullet
+
+#### Dependency notes (NumPy / OpenCV)
+- If you see `A module that was compiled using NumPy 1.x cannot be run in NumPy 2.x` while importing PyBullet, install a NumPy 1.x build (this repo pins `numpy<2` in `requirements.txt`).
+- If you see OpenCV errors like `Could not load the Qt platform plugin "xcb"`, use the headless OpenCV wheel (`opencv-python-headless`) and/or run without GUI windows.
+
+*Note:* On some Ubuntu setups, `pip` may refuse to install into the system Python due to PEP 668 (“externally managed environment”). Using the virtual environment commands above avoids that.
 
 ```bash
 cd ~

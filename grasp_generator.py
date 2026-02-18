@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy.lib.npyio import save
 import torch.utils.data
 from PIL import Image
 from datetime import datetime
@@ -25,13 +24,19 @@ class GraspGenerator:
     def __init__(self, net_path, camera, depth_radius, fig, IMG_WIDTH=224, network='GR_ConvNet', device='cpu'):
 
         if (device=='cpu'):
-            self.net = torch.load(net_path, map_location=device)
+            try:
+                self.net = torch.load(net_path, map_location=device, weights_only=False)
+            except TypeError:
+                self.net = torch.load(net_path, map_location=device)
             self.device = get_device(force_cpu=True)
         else:
             #self.net = torch.load(net_path, map_location=lambda storage, loc: storage.cuda(1))
             #self.device = get_device()
             print ("GPU is not supported yet! :( -- continuing experiment on CPU!" )
-            self.net = torch.load(net_path, map_location='cpu')
+            try:
+                self.net = torch.load(net_path, map_location='cpu', weights_only=False)
+            except TypeError:
+                self.net = torch.load(net_path, map_location='cpu')
             self.device = get_device(force_cpu=True)
 
         # print (self.net)

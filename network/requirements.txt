@@ -1,5 +1,5 @@
-numpy
-opencv-python
+numpy<2
+opencv-python-headless
 matplotlib
 scikit-image
 imageio

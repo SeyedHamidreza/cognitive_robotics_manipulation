@@ -11,6 +11,7 @@ import cv2
 import math
 import matplotlib.pyplot as plt
 import time
+import traceback
 
 
 class GrasppingScenarios():
@@ -68,8 +69,8 @@ class GrasppingScenarios():
     def is_there_any_object(self,camera):
         self.dummy_simulation_steps(10)
         rgb, depth, _ = camera.get_cam_img()
-        #print ("min RGB = ", rgb.min(), "max RGB = ", rgb.max(), "rgb.avg() = ", np.average(rgb))
-        #print ("min depth = ", depth.min(), "max depth = ", depth.max())
+        print ("min RGB = ", rgb.min(), "max RGB = ", rgb.max(), "rgb.avg() = ", np.average(rgb))
+        print ("min depth = ", depth.min(), "max depth = ", depth.max())
         if (depth.max()- depth.min() < 0.0025):
             return False
         else:
@@ -247,8 +248,7 @@ class GrasppingScenarios():
             #self.dummy_simulation_steps(50)
 
             number_of_failures = 0
-            ATTEMPTS = 4
-            number_of_attempts = ATTEMPTS
+            number_of_attempts = self.ATTEMPTS
             failed_grasp_counter = 0
             flag_failed_grasp_counter= False
 
@@ -256,11 +256,17 @@ class GrasppingScenarios():
                 #env.move_arm_away()
                 try: 
                     idx = 0 ## select the best grasp configuration
-                    for i in range(number_of_attempts):
+                    for attempt_idx in range(number_of_attempts):
                         data.add_try()  
-                        rgb, depth, _ = camera.get_cam_img()
-                        rgb = cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB)
-                        
+                        bgr, depth, _ = camera.get_cam_img()
+                        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+                        if vis:
+                            try:
+                                cv2.imshow('rgb', bgr)
+                                cv2.waitKey(1)
+                            except cv2.error:
+                                pass
+
                         grasps, save_name = generator.predict_grasp( rgb, depth, n_grasps=number_of_attempts, show_output=output)
                         if (grasps == []):
                                 self.dummy_simulation_steps(30)
@@ -316,8 +322,8 @@ class GrasppingScenarios():
                                 time.sleep(0.25)
                                 p.removeUserDebugItem(debugID)
                                 
-                            if save_name is not None:
-                                    os.rename(save_name + '.png', save_name + f'_SUCCESS_grasp{i}.png')
+                                if save_name is not None:
+                                    os.rename(save_name + '.png', save_name + f'_SUCCESS_grasp{attempt_idx}.png')
                                 
                         else:
                             #env.reset_robot()   
@@ -339,9 +345,15 @@ class GrasppingScenarios():
 
                         #env.reset_all_obj()
         
-                except:
-                    print("An exception occurred during the experiment!!!")
-                    env.reset_robot()
+                except Exception as exc:
+                    print(f"An exception occurred during the experiment: {exc}")
+                    if debug:
+                        traceback.print_exc()
+                    number_of_failures += 1
+                    try:
+                        env.reset_robot()
+                    except Exception:
+                        pass
                     #print ("#objects = ", len(env.obj_ids), "#failed = ", number_of_failures , "#attempts =", number_of_attempts)
         
                 if flag_failed_grasp_counter:
