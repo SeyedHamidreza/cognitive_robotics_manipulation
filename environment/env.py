@@ -40,6 +40,12 @@ class Environment:
         # define environment
         self.physicsClient = p.connect(p.GUI if self.vis else p.DIRECT)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
+
+        try:
+            p.configureDebugVisualizer(p.COV_ENABLE_SHADOWS, 0)
+        except Exception:
+            pass
+    
         p.setGravity(0, 0, -10)
         self.planeID = p.loadURDF('plane.urdf')
         self.tableID = p.loadURDF('environment/urdf/objects/table.urdf',
@@ -166,7 +172,8 @@ class Environment:
         Hook p.stepSimulation()
         """
         p.stepSimulation()
-        if self.vis:
+        if self.vis:          
+            
             if self.debug:
                 if self.eef_debug_lineID is not None:
                     p.removeUserDebugItem(self.eef_debug_lineID)
